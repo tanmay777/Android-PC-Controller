@@ -162,7 +162,9 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             boolean result=true;
             try{
                 InetAddress serverAddr=InetAddress.getByName(params[0]);
+                Log.v("Check params[0]:",params[0]);
                 socket=new Socket(serverAddr,Constants.SERVER_PORT); //Open socket on server IP and port
+                Log.v("Check params[0]:",params[0]);
             }
             catch (IOException e){
                 Log.e("Android App ","Error while connecting",e);
