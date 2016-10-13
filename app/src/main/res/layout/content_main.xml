@@ -24,7 +24,8 @@
         android:textColor="#FFFFFF"
         android:textSize="25sp"
         android:background="@drawable/mousepad_background"
-        android:layout_weight="1"/>
+        android:layout_weight="1"
+        android:id="@+id/mouse_pad"/>
 
     <!--So for example if you just declare a Webview or View in your layout.xml
     and try to set an OnClickListener on this views the OnClick event won't be
