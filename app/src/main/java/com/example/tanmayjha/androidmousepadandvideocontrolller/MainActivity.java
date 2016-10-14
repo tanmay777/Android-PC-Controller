@@ -186,7 +186,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             try{
                 if(isConnected){
                     out=new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())),true);
-                    //create output stream to send data to server
+                    //create output stream to send data to server.
                 }
                 } catch (IOException e){
                 Log.e("Android App","Error while creating OutWriter",e);
