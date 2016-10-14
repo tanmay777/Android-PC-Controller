@@ -150,7 +150,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             }
             catch (IOException e){
                 Log.e("Android App ","Error in closing the socket",e);
-                //!!Aren't there supposed to be only 2 arguments?
+                //!!Aren't there supposed to be only 2 arguments? May be because of the size of each argument
             }
         }
     }
@@ -161,10 +161,13 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         protected Boolean doInBackground(String... params){
             boolean result=true;
             try{
+                //public static InetAddress getByName(String host) throws UnknownHostException.
+                // Determines the IP address of a host, given the host's name.
+                // The host name can either be a machine name, such as " java.sun.com ",
+                // or a textual representation of its IP address.
                 InetAddress serverAddr=InetAddress.getByName(params[0]);
                 Log.v("Check params[0]:",params[0]);
-                socket=new Socket(serverAddr,Constants.SERVER_PORT); //Open socket on server IP and port
-                Log.v("Check params[0]:",params[0]);
+                socket=new Socket(serverAddr,Constants.SERVER_PORT); //Opens socket on server IP and port
             }
             catch (IOException e){
                 Log.e("Android App ","Error while connecting",e);
