@@ -26,7 +26,7 @@ import java.net.Socket;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener {
 
-    Button playPauseButton, nextButton, previousButton;
+    Button playPauseButton, forwardButton, backwardButton;
     TextView mousePad;
 
     private boolean isConnected = false;
@@ -47,12 +47,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         setSupportActionBar(toolbar);
 
         playPauseButton = (Button) findViewById(R.id.play_pause_button);
-        nextButton = (Button) findViewById(R.id.next_button);
-        previousButton = (Button) findViewById(R.id.pervious_button);
+        forwardButton = (Button) findViewById(R.id.forward_button);
+        backwardButton = (Button) findViewById(R.id.backward_button);
 
         playPauseButton.setOnClickListener(this);
-        nextButton.setOnClickListener(this);
-        previousButton.setOnClickListener(this);
+        forwardButton.setOnClickListener(this);
+        backwardButton.setOnClickListener(this);
 
         mousePad = (TextView) findViewById(R.id.mouse_pad);
 
@@ -128,14 +128,14 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     out.println(Constants.PLAY);
                 }
                 break;
-            case R.id.next_button:
+            case R.id.forward_button:
                 if(isConnected &&out!=null) {
-                    out.println(Constants.NEXT);
+                    out.println(Constants.FORWARD);
                 }
                 break;
-            case R.id.pervious_button:
+            case R.id.backward_button:
                 if (isConnected && out != null) {
-                    out.println(Constants.PREVIOUS);
+                    out.println(Constants.BACKWARD);
                 }
                 break;
         }
