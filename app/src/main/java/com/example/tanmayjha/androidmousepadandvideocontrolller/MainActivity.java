@@ -64,6 +64,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                     switch (motionEvent.getAction()) {
                         case MotionEvent.ACTION_DOWN: {
                             //To save X and Y positions when the user touches the TextViiew
+                            //!!But we didn't send the location
                             initX = motionEvent.getX();
                             initY = motionEvent.getY();
                             mouseMoved = false;
