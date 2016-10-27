@@ -1,11 +1,7 @@
-package com.example.tanmayjha.androidmousepadandvideocontrolller;
+package com.example.tanmayjha.androidmousepadandvideocontrolller.Entity;
 
 import android.os.AsyncTask;
 import android.os.Bundle;
-import android.provider.SyncStateContract;
-import android.support.annotation.BoolRes;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.util.Log;
@@ -16,6 +12,9 @@ import android.view.MenuItem;
 import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
+
+import com.example.tanmayjha.androidmousepadandvideocontrolller.Control.Constants;
+import com.example.tanmayjha.androidmousepadandvideocontrolller.R;
 
 import java.io.BufferedWriter;
 import java.io.IOException;

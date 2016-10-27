@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/set_up_connection"
+            android:icon="@drawable/ic_menu_camera"
+            android:title="Set up Connection" />
+        <item
+            android:id="@+id/mouse"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="Mouse" />
+        <item
+            android:id="@+id/player"
+            android:icon="@drawable/ic_menu_slideshow"
+            android:title="Player" />
+        <item
+            android:id="@+id/search"
+            android:icon="@drawable/ic_menu_manage"
+            android:title="Search" />
+        <item
+            android:id="@+id/general_settings"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="General Settings"/>
+        <item
+            android:id="@+id/about"
+            android:icon="@drawable/ic_menu_gallery"
+            android:title="About"/>
+    </group>
+</menu>
