@@ -19,9 +19,9 @@
             android:icon="@drawable/ic_menu_manage"
             android:title="Search" />
         <item
-            android:id="@+id/general_settings"
+            android:id="@+id/system_settings"
             android:icon="@drawable/ic_menu_gallery"
-            android:title="General Settings"/>
+            android:title="System Settings"/>
         <item
             android:id="@+id/about"
             android:icon="@drawable/ic_menu_gallery"

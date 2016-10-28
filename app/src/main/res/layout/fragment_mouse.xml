@@ -1,0 +1,21 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context="com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.Mouse.MouseFragment">
+
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:text="This is your mouse pad"
+        android:gravity="center_horizontal|center_vertical"
+        android:fontFamily="serif"
+        android:clickable="true"
+        android:textColor="#FFFFFF"
+        android:textSize="25sp"
+        android:background="@drawable/mousepad_background"
+        android:layout_weight="1"
+        android:id="@+id/mouse_pad"/>
+
+</LinearLayout>

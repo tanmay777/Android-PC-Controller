@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Entity.SetUpConnectionFragment">
+    tools:context=".Entity.SetUpConnection.SetUpConnectionFragment">
 
     <TextView
         android:text="Directions"
@@ -13,17 +13,19 @@
     <TextView
         style="@style/BodyFont"
         android:text="1.Turn on mobile data.\n2.Create hotspot on your phone.\n3.Open command prompt.\n4.Now you need to obtain IP address. \nYour IP address should be listed under “Wireless LAN adapter Wireless Network Connection.” Use the IPv4 address.\n5.Now to obtain all free ports.\nType “netstat -a” and press “Enter.” A list of all your active TCP/IP and UDP connections will populate.\nUnder UDP, the port numbers appear after the IP address with a colon separating the two. For example, if your IP address is 192.168.1.1 and you see an entry for 192.168.1.1:2869, it means port 2869 is open." />
-
+    <!--
     <android.support.design.widget.TextInputLayout
         android:layout_marginTop="20dp"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textlayout_ip_address"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
         <EditText
             android:id="@+id/ip_address"
             style="@style/BodyFont"
-            android:hint="Ip address,eg. 192.168.43.120"/>
+            android:hint="Ip address,eg. 192.168.43.120"
+            TRY ADDING EMS./>
     </android.support.design.widget.TextInputLayout>
 
     <android.support.design.widget.TextInputLayout
@@ -31,12 +33,28 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/textlayout_port_number"
-        android:layout_gravity="center_horizontal">
+        android:layout_gravity="center_horizontal"
+        app:hintTextAppearance="@style/TextAppearence.App.TextInputLayout">
         <EditText
             android:id="@+id/port_number"
             android:hint="Port no, eg. 132"
             style="@style/BodyFont"/>
     </android.support.design.widget.TextInputLayout>
+-->
+    <EditText
+        android:id="@+id/ip_address"
+        style="@style/BodyFont"
+        android:hint="Ip address,eg. 192.168.43.120"
+        android:text="192.168.43.120"
+        android:layout_gravity="center_horizontal">
+    </EditText>
+
+    <EditText
+        android:id="@+id/port_number"
+        android:hint="Port no, eg. 132"
+        style="@style/BodyFont"
+        android:text="138"
+        android:layout_gravity="center_horizontal"/>
 
     <Button
         android:layout_marginTop="20dp"
