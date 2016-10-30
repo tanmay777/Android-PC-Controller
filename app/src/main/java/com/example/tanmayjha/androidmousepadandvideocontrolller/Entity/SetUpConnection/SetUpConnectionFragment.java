@@ -55,8 +55,8 @@ public class SetUpConnectionFragment extends Fragment {
                 Integer serverPortValue;
                 IPAddressValue=IPAdress.getText().toString();
                 serverPortValue=Integer.parseInt(portNumber.getText().toString());
-                networkValues.setServerIP(IPAddressValue);
-                networkValues.setServerPort(serverPortValue);
+                NetworkValues.networkValues.setServerIP(IPAddressValue);
+                NetworkValues.networkValues.setServerPort(serverPortValue);
                 getActivity().startService(new Intent(getActivity(),ConnectionService.class));
             }
         });

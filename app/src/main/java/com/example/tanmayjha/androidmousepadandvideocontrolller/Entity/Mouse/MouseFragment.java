@@ -20,11 +20,10 @@ import java.net.Socket;
  * A simple {@link Fragment} subclass.
  */
 public class MouseFragment extends Fragment {
-    ConnectionService connectionService;
 
-    private boolean isConnected = connectionService.isConnected;
+    private boolean isConnected = ConnectionService.connectionService.isConnected;
     private boolean mouseMoved = false;
-    private PrintWriter out=connectionService.getOut();
+    private PrintWriter out=ConnectionService.connectionService.getOut();
     TextView mousePad;
 
     private float initX = 0;

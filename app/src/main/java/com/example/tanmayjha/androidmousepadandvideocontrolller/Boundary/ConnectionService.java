@@ -26,6 +26,8 @@ public class ConnectionService extends Service {
     public Socket socket;
     public PrintWriter out;
 
+    public static ConnectionService connectionService=new ConnectionService();
+
     public PrintWriter getOut() {
         return out;
     }
@@ -50,9 +52,9 @@ public class ConnectionService extends Service {
             // Determines the IP address of a host, given the host's name.
             // The host name can either be a machine name, such as " java.sun.com ",
             // or a textual representation of its IP address.
-            InetAddress serverAddr=InetAddress.getByName(networkValues.getServerIP());
-            Log.v("IP address value:",networkValues.getServerIP());
-            socket=new Socket(serverAddr, networkValues.getServerPort()); //Opens socket on server IP and port
+            InetAddress serverAddr=InetAddress.getByName(NetworkValues.networkValues.getServerIP());
+            Log.v("IP address value:",NetworkValues.networkValues.getServerIP());
+            socket=new Socket(serverAddr, NetworkValues.networkValues.getServerPort()); //Opens socket on server IP and port
         }
         catch (IOException e){
             Log.e("Android App ","Error while connecting",e);

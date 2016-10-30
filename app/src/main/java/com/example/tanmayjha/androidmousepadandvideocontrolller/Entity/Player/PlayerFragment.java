@@ -18,11 +18,10 @@ import java.io.PrintWriter;
  * A simple {@link Fragment} subclass.
  */
 public class PlayerFragment extends Fragment implements View.OnClickListener{
-    ConnectionService connectionService;
 
     Button playPauseButton, forwardButton, backwardButton,volumeUp,volumeDown;
-    private boolean isConnected = connectionService.isConnected();
-    private PrintWriter out=connectionService.getOut();
+    private boolean isConnected =ConnectionService.connectionService.isConnected();
+    private PrintWriter out=ConnectionService.connectionService.getOut();
 
     public PlayerFragment() {
         // Required empty public constructor

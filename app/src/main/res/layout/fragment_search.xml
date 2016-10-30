@@ -1,13 +1,28 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.Search.SearchFragment">
+    tools:context="com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.Search.SearchFragment"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_marginTop="20sp"
+        style="@style/HeadingFont"
+        android:text="Enter the text which you want to be displayed on the PC"
+        android:layout_gravity="center_horizontal"
+        android:gravity="center_horizontal" />
+    <EditText
+        style="@style/BodyFont"
+        android:ems="10"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/text"/>
+    <Button
+        android:layout_gravity="center_horizontal"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:id="@+id/send"
+        android:text="Send"
+        android:textAllCaps="false"/>
 
-</FrameLayout>
+</LinearLayout>

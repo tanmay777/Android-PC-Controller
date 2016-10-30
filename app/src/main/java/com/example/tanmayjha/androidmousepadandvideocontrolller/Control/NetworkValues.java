@@ -9,6 +9,14 @@ public class NetworkValues {
     public  Integer serverPort;
     public boolean isConnected;
 
+    public NetworkValues(String serverIP, Integer serverPort, boolean isConnected) {
+        this.serverIP = serverIP;
+        this.serverPort = serverPort;
+        this.isConnected = isConnected;
+    }
+
+    public static NetworkValues networkValues=new NetworkValues("192.168.43.120",138,true);
+
     public void setConnected(boolean connected) {
         isConnected = connected;
     }
