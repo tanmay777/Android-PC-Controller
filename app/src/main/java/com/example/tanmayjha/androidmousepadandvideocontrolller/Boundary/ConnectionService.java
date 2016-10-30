@@ -26,6 +26,7 @@ public class ConnectionService extends Service {
     public Socket socket;
     public PrintWriter out;
 
+
     public static ConnectionService connectionService=new ConnectionService();
 
     public PrintWriter getOut() {
@@ -37,7 +38,6 @@ public class ConnectionService extends Service {
         return isConnected;
     }
 
-    NetworkValues networkValues;
 
 
     public ConnectionService() {
@@ -61,12 +61,12 @@ public class ConnectionService extends Service {
             result=false;
         }
 
-        isConnected=result;
+        connectionService.isConnected=result;
         Toast.makeText(getApplicationContext(),isConnected?"Connected to server!":"Error while connecting",Toast.LENGTH_LONG).show();
         //there is an if statement in 2nd argument of toast
         try{
             if(isConnected){
-                out=new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())),true);
+                connectionService.out=new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())),true);
                 //create output stream to send data to server.
             }
         } catch (IOException e){

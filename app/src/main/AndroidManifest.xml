@@ -19,7 +19,7 @@
         </activity>
         <activity
             android:name=".Entity.Navigation.HomeActivity"
-            android:label="@string/title_activity_home"
+            android:label="PC Controller"
             android:theme="@style/AppTheme.NoActionBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

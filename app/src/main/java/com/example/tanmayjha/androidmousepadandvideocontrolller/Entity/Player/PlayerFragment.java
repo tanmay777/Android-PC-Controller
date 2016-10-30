@@ -3,6 +3,7 @@ package com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.Player;
 
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -20,8 +21,8 @@ import java.io.PrintWriter;
 public class PlayerFragment extends Fragment implements View.OnClickListener{
 
     Button playPauseButton, forwardButton, backwardButton,volumeUp,volumeDown;
-    private boolean isConnected =ConnectionService.connectionService.isConnected();
-    private PrintWriter out=ConnectionService.connectionService.getOut();
+    public boolean isConnected =ConnectionService.connectionService.isConnected();
+    public PrintWriter out=ConnectionService.connectionService.getOut();
 
     public PlayerFragment() {
         // Required empty public constructor

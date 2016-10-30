@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.Search.SearchFragment"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:background="@drawable/app_background">
 
     <TextView
         android:layout_marginTop="20sp"

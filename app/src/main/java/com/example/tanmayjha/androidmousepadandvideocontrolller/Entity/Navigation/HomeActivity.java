@@ -2,6 +2,7 @@ package com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.Navigati
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.StrictMode;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.FragmentTransaction;
@@ -46,6 +47,9 @@ public class HomeActivity extends AppCompatActivity
         FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
         SetUpConnectionFragment setUpConnectionFragment=new SetUpConnectionFragment();
         ft.replace(R.id.container,setUpConnectionFragment).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).commit();
+
+        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
+        StrictMode.setThreadPolicy(policy);
     }
 
     @Override

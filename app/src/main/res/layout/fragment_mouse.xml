@@ -3,7 +3,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
-    tools:context="com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.Mouse.MouseFragment">
+    tools:context="com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.Mouse.MouseFragment"
+    android:background="@drawable/app_background">
 
     <TextView
         android:layout_width="match_parent"

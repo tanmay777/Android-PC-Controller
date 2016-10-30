@@ -4,7 +4,7 @@
     android:orientation="vertical"
     android:layout_height="match_parent"
     tools:context="com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.Player.PlayerFragment"
-    android:background="@drawable/background">
+    android:background="@drawable/app_background">
 
 
     <LinearLayout
