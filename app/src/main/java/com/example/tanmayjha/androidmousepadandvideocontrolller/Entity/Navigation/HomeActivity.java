@@ -44,9 +44,6 @@ public class HomeActivity extends AppCompatActivity
         FragmentTransaction ft=getSupportFragmentManager().beginTransaction();
         SetUpConnectionFragment setUpConnectionFragment=new SetUpConnectionFragment();
         ft.replace(R.id.container,setUpConnectionFragment).setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE).commit();
-
-        StrictMode.ThreadPolicy policy = new StrictMode.ThreadPolicy.Builder().permitAll().build();
-        StrictMode.setThreadPolicy(policy);
     }
 
     @Override

@@ -2,6 +2,7 @@ package com.example.tanmayjha.androidmousepadandvideocontrolller.Boundary;
 
 import android.app.Service;
 import android.content.Intent;
+import android.os.AsyncTask;
 import android.os.IBinder;
 import android.support.annotation.Nullable;
 import android.util.Log;
@@ -9,6 +10,7 @@ import android.widget.Toast;
 
 import com.example.tanmayjha.androidmousepadandvideocontrolller.Control.Constants;
 import com.example.tanmayjha.androidmousepadandvideocontrolller.Control.NetworkValues;
+import com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.MainActivity;
 
 import java.io.BufferedWriter;
 import java.io.IOException;
@@ -46,34 +48,50 @@ public class ConnectionService extends Service {
     @Override
     public void onCreate() {
         super.onCreate();
-        boolean result=true;
-        try{
-            //public static InetAddress getByName(String host) throws UnknownHostException.
-            // Determines the IP address of a host, given the host's name.
-            // The host name can either be a machine name, such as " java.sun.com ",
-            // or a textual representation of its IP address.
-            InetAddress serverAddr=InetAddress.getByName(NetworkValues.networkValues.getServerIP());
-            Log.v("IP address value:",NetworkValues.networkValues.getServerIP());
-            socket=new Socket(serverAddr, NetworkValues.networkValues.getServerPort()); //Opens socket on server IP and port
-        }
-        catch (IOException e){
-            Log.e("Android App ","Error while connecting",e);
-            result=false;
+        boolean result = true;
+        ConnectPhoneTask connectPhoneTask = new ConnectPhoneTask();
+        connectPhoneTask.execute(NetworkValues.networkValues.getServerIP());
+    }
+
+    public class ConnectPhoneTask extends AsyncTask<String,Void,Boolean> {
+
+        @Override
+        protected Boolean doInBackground(String... params){
+            boolean result=true;
+            try{
+                //public static InetAddress getByName(String host) throws UnknownHostException.
+                // Determines the IP address of a host, given the host's name.
+                // The host name can either be a machine name, such as " java.sun.com ",
+                // or a textual representation of its IP address.
+                InetAddress serverAddr=InetAddress.getByName(params[0]);
+                Log.v("Check params[0]:",params[0]);
+                socket=new Socket(serverAddr,NetworkValues.networkValues.getServerPort()); //Opens socket on server IP and port
+            }
+            catch (IOException e){
+                Log.e("Android App ","Error while connecting",e);
+                result=false;
+            }
+            return result;
         }
 
-        connectionService.isConnected=result;
-        Toast.makeText(getApplicationContext(),isConnected?"Connected to server!":"Error while connecting",Toast.LENGTH_LONG).show();
-        //there is an if statement in 2nd argument of toast
-        try{
-            if(isConnected){
-                connectionService.out=new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())),true);
-                //create output stream to send data to server.
+        @Override
+        protected void onPostExecute(Boolean result)
+        {
+            isConnected=result;
+            Toast.makeText(getApplicationContext(),isConnected?"Connected to server!":"Error while connecting",Toast.LENGTH_LONG).show();
+            //there is an if statement in 2nd argument of toast
+            try{
+                if(isConnected){
+                    out=new PrintWriter(new BufferedWriter(new OutputStreamWriter(socket.getOutputStream())),true);
+                    //create output stream to send data to server.
+                }
+            } catch (IOException e){
+                Log.e("Android App","Error while creating OutWriter",e);
+                Toast.makeText(getApplicationContext(),"Error while connecting",Toast.LENGTH_LONG).show();
             }
-        } catch (IOException e){
-            Log.e("Android App","Error while creating OutWriter",e);
-            Toast.makeText(getApplicationContext(),"Error while connecting",Toast.LENGTH_LONG).show();
         }
     }
+
 
     @Nullable
     @Override
