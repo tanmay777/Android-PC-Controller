@@ -85,10 +85,10 @@ public class ConnectionService extends Service {
     public void onDestroy() {
         super.onDestroy();
 
-        if(isConnected && out!=null){
+        if(connectionService.isConnected && connectionService.out!=null){
             try {
-                out.println("exit"); //tell server to exit
-                socket.close();
+                connectionService.out.println("exit"); //tell server to exit
+                connectionService.socket.close();
             }
             catch (IOException e){
                 Log.e("Android App ","Error in closing the socket",e);

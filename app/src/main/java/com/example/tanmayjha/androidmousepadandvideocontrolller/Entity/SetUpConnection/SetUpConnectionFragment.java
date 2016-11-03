@@ -20,10 +20,9 @@ import com.example.tanmayjha.androidmousepadandvideocontrolller.R;
  * A simple {@link Fragment} subclass.
  */
 public class SetUpConnectionFragment extends Fragment {
-    EditText IPAdress,portNumber;
+    EditText IPAddress,portNumber;
     //TextInputLayout inputLayoutIPAdress,inputLayoutPortNumber;
     Button done;
-    NetworkValues networkValues;
 
     public SetUpConnectionFragment() {
         // Required empty public constructor
@@ -43,7 +42,7 @@ public class SetUpConnectionFragment extends Fragment {
         super.onStart();
         View view=getView();
 
-        IPAdress=(EditText)view.findViewById(R.id.ip_address);
+        IPAddress=(EditText)view.findViewById(R.id.ip_address);
         portNumber=(EditText)view.findViewById(R.id.port_number);
         done=(Button)view.findViewById(R.id.done_button);
         //inputLayoutIPAdress=(TextInputLayout)view.findViewById(R.id.textlayout_ip_address);
@@ -53,7 +52,7 @@ public class SetUpConnectionFragment extends Fragment {
             public void onClick(View view) {
                 String IPAddressValue;
                 Integer serverPortValue;
-                IPAddressValue=IPAdress.getText().toString();
+                IPAddressValue=IPAddress.getText().toString();
                 serverPortValue=Integer.parseInt(portNumber.getText().toString());
                 NetworkValues.networkValues.setServerIP(IPAddressValue);
                 NetworkValues.networkValues.setServerPort(serverPortValue);

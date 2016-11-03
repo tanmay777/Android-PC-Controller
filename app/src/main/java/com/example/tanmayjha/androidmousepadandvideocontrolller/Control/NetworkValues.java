@@ -16,6 +16,7 @@ public class NetworkValues {
     }
 
     public static NetworkValues networkValues=new NetworkValues("192.168.43.120",138,true);
+    //what does networkValues color code mean?
 
     public void setConnected(boolean connected) {
         isConnected = connected;

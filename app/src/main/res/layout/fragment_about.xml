@@ -1,15 +1,13 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.About.AboutFragment"
     android:background="@drawable/app_background"
-    >
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
     <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
-
-</FrameLayout>
+        android:padding="10dp"
+        style="@style/BodyFont"
+        android:text="Description:This Application asks the user to input the IP address and port number.Then using them it create a socket which is like a connection to the free port available.Then an output stream is initialized. Through which string are sent to PC. On the PC side there is an input stream, the code looks for the input and then takes the action accordingly\n\nThis application is made by:\nTanmay Jha 15BCE0618\nVaibhav Aggarwal 15BCE0143\nRSP Varun 15BCEXXX \nHarsh 15BCEXXX\n\nReferences:StackOverflow,\nblog of Ravi Tamada,\nOracle Official website for keycodes\n\nBase Code:http://codesmith.in/control-pc-from-android-app-using-java/"/>
+</LinearLayout>

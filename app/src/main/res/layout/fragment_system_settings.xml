@@ -1,14 +1,55 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context="com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.SystemSettings.SystemSettingsFragment"
-    android:background="@drawable/app_background">
+    android:background="@drawable/app_background"
+    android:orientation="vertical">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+    <Button
+        android:layout_marginTop="100dp"
+        style="@style/BodyFont"
+        android:background="@drawable/buttonlayout"
+        android:text="Shut Down"
+        android:textAllCaps="false"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/shut_down_button"/>
 
-</FrameLayout>
+    <Button
+        android:layout_marginTop="10dp"
+        style="@style/BodyFont"
+        android:background="@drawable/buttonlayout"
+        android:text="Sleep"
+        android:textAllCaps="false"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/sleep_button"/>
+
+    <Button
+        android:layout_marginTop="10dp"
+        style="@style/BodyFont"
+        android:background="@drawable/buttonlayout"
+        android:text="Restart"
+        android:textAllCaps="false"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/restart_button"/>
+
+
+    <Button
+        android:layout_marginTop="40dp"
+        style="@style/BodyFont"
+        android:background="@drawable/buttonlayout"
+        android:text="Brightness Up"
+        android:textAllCaps="false"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/brightness_up_button"/>
+
+
+    <Button
+        android:layout_marginTop="10dp"
+        style="@style/BodyFont"
+        android:background="@drawable/buttonlayout"
+        android:text="Brightness Down"
+        android:textAllCaps="false"
+        android:layout_gravity="center_horizontal"
+        android:id="@+id/brightness_down_button"/>
+</LinearLayout>

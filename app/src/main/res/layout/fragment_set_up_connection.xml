@@ -5,7 +5,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".Entity.SetUpConnection.SetUpConnectionFragment"
-    android:background="@drawable/app_background">
+    android:background="@drawable/app_background"
+    android:padding="10dp">
 
     <TextView
         android:text="Directions"
