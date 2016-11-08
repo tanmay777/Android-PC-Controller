@@ -5,9 +5,9 @@ package com.example.tanmayjha.androidmousepadandvideocontrolller.Control;
  */
 
 public class NetworkValues {
-    public String serverIP;
-    public  Integer serverPort;
-    public boolean isConnected;
+    public static String serverIP;
+    public static Integer serverPort;
+    public static boolean isConnected;
 
     public NetworkValues(String serverIP, Integer serverPort, boolean isConnected) {
         this.serverIP = serverIP;
@@ -52,6 +52,4 @@ public class NetworkValues {
         this.serverIP = serverIP;
         this.serverPort = serverPort;
     }
-
-
 }

@@ -1,7 +1,9 @@
+------------------------------------------------------------------------------------------------------
 package com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.SetUpConnection;
 
 
 import android.content.ComponentName;
+import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.IBinder;
@@ -22,6 +24,8 @@ import com.example.tanmayjha.androidmousepadandvideocontrolller.R;
  * A simple {@link Fragment} subclass.
  */
 public class SetUpConnectionFragment extends Fragment {
+    ConnectionService connectionService;
+    private boolean bound=false;
     EditText IPAddress,portNumber;
     //TextInputLayout inputLayoutIPAdress,inputLayoutPortNumber;
     Button done;
@@ -58,9 +62,25 @@ public class SetUpConnectionFragment extends Fragment {
                 serverPortValue=Integer.parseInt(portNumber.getText().toString());
                 NetworkValues.networkValues.setServerIP(IPAddressValue);
                 NetworkValues.networkValues.setServerPort(serverPortValue);
-                getActivity().startService(new Intent(getActivity(),ConnectionService.class));
+                Intent intent=new Intent(getActivity(),ConnectionService.class);
+                bindService(intent, connection, Context.BIND_AUTO_CREATE);
             }
         });
     }
 
+    private ConnectionService connection = new ConnectionService() {
+
+        @Override
+        public void onServiceConnected(ComponentName componentName, IBinder binder) {
+            ConnectionService.ConnectionBinder connectionBinder =
+                    (ConnectionService.ConnectionBinder) binder;
+            connection = ConnectionBinder.getConnection();
+            bound = true;
+        }
+
+        @Override
+        public void onServiceDisconnected(ComponentName componentName) {
+            bound = false;
+        }
+    };
 }

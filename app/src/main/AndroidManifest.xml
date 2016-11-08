@@ -28,7 +28,10 @@
             </intent-filter>
         </activity>
 
-        <service android:name=".Boundary.ConnectionService"></service>
+        <service
+            android:name=".Boundary.ConnectionService"
+            android:enabled="true">
+        </service>
     </application>
 
 </manifest>
