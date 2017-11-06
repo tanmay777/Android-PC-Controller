@@ -2,7 +2,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.Search.SearchFragment"
+    tools:context="com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.Keyboard.KeyboardFragment"
     android:orientation="vertical"
     android:background="@drawable/app_background">
 

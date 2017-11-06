@@ -1,4 +1,4 @@
-package com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.Search;
+package com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.Keyboard;
 
 
 import android.os.Bundle;
@@ -8,7 +8,6 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 
 import com.example.tanmayjha.androidmousepadandvideocontrolller.Boundary.ConnectionService;
 import com.example.tanmayjha.androidmousepadandvideocontrolller.R;
@@ -18,14 +17,14 @@ import java.io.PrintWriter;
 /**
  * A simple {@link Fragment} subclass.
  */
-public class SearchFragment extends Fragment {
+public class KeyboardFragment extends Fragment {
     Button send;
     EditText stringToBePrinted;
     private boolean isConnected = ConnectionService.connectionService.isConnected();
     private PrintWriter out=ConnectionService.connectionService.getOut();
 
 
-    public SearchFragment() {
+    public KeyboardFragment() {
         // Required empty public constructor
     }
 

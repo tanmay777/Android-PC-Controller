@@ -15,9 +15,9 @@
             android:icon="@drawable/ic_menu_slideshow"
             android:title="Player" />
         <item
-            android:id="@+id/search"
+            android:id="@+id/keyboard"
             android:icon="@drawable/ic_menu_manage"
-            android:title="Search" />
+            android:title="Keyboard" />
         <item
             android:id="@+id/system_settings"
             android:icon="@drawable/ic_menu_gallery"

@@ -2,7 +2,6 @@ package com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.Navigati
 
 import android.content.Intent;
 import android.os.Bundle;
-import android.os.StrictMode;
 import android.support.v4.app.FragmentTransaction;
 import android.support.design.widget.NavigationView;
 import android.support.v4.view.GravityCompat;
@@ -17,7 +16,7 @@ import com.example.tanmayjha.androidmousepadandvideocontrolller.Boundary.Connect
 import com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.About.AboutFragment;
 import com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.Mouse.MouseFragment;
 import com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.Player.PlayerFragment;
-import com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.Search.SearchFragment;
+import com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.Keyboard.KeyboardFragment;
 import com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.SetUpConnection.SetUpConnectionFragment;
 import com.example.tanmayjha.androidmousepadandvideocontrolller.Entity.SystemSettings.SystemSettingsFragment;
 import com.example.tanmayjha.androidmousepadandvideocontrolller.R;
@@ -103,9 +102,9 @@ public class HomeActivity extends AppCompatActivity
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
 
-        } else if (id == R.id.search) {
-            SearchFragment searchFragment=new SearchFragment();
-            ft.replace(R.id.container,searchFragment);
+        } else if (id == R.id.keyboard) {
+            KeyboardFragment keyboardFragment =new KeyboardFragment();
+            ft.replace(R.id.container, keyboardFragment);
             ft.setTransition(FragmentTransaction.TRANSIT_FRAGMENT_FADE);
             ft.commit();
 
