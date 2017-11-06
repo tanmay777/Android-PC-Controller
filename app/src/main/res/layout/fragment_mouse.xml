@@ -16,7 +16,39 @@
         android:textColor="#FFFFFF"
         android:textSize="25sp"
         android:background="@drawable/mousepad_background"
-        android:layout_weight="1"
+        android:layout_weight=".9"
         android:id="@+id/mouse_pad"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:gravity="center"
+        android:layout_weight=".1"
+        >
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:layout_weight="1"
+            android:text="Left Click"
+            android:textColor="#FFFFFF"
+            android:id="@+id/left_click"
+            />
+
+        <View
+            android:background="#FFF"
+            android:layout_width="1dp"
+            android:layout_height="match_parent"
+        />
+
+        <Button
+            android:layout_weight="1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@null"
+            android:text="Right Click"
+            android:id="@+id/right_click"
+            android:textColor="#FFFFFF"/>
+    </LinearLayout>
 
 </LinearLayout>

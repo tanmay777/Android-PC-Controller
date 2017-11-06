@@ -7,6 +7,7 @@ import android.view.LayoutInflater;
 import android.view.MotionEvent;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 
 import com.example.tanmayjha.androidmousepadandvideocontrolller.Boundary.ConnectionService;
@@ -25,6 +26,7 @@ public class MouseFragment extends Fragment {
     public boolean mouseMoved = false;
     public PrintWriter out=ConnectionService.connectionService.getOut();
     TextView mousePad;
+    Button leftClickButton,rightClickButton;
 
     private float initX = 0;
     private float initY = 0;
@@ -50,6 +52,21 @@ public class MouseFragment extends Fragment {
         super.onStart();
         View view=getView();
         mousePad = (TextView)view.findViewById(R.id.mouse_pad);
+        leftClickButton=(Button)view.findViewById(R.id.left_click);
+        rightClickButton=(Button)view.findViewById(R.id.right_click);
+        leftClickButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                out.println(Constants.MOUSE_LEFT_CLICK);
+            }
+        });
+        rightClickButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                out.println(Constants.MOUSE_RIGHT_CLICK);
+            }
+        });
+
         //To Capture finger taps and movement of the textView
         mousePad.setOnTouchListener(new View.OnTouchListener() {
             @Override
